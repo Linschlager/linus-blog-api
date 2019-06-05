@@ -34,7 +34,11 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  playground: false
+  playground: false,
+  cors: {
+    origin: '*',
+    credentials: true
+  }
 });
 
 module.exports = server.createHandler();
