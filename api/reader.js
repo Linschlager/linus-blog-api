@@ -1,5 +1,6 @@
 const fs = require('fs');
-const folder = './posts';
+const { join } = require('path');
+const folder = join(__dirname, '..', 'posts');
 
 /**
  *
@@ -16,7 +17,7 @@ const readPost = (slug) => {
       slug,
       content,
     };
-  } catch {}
+  } catch(ex) { console.log(ex) }
 };
 
 /**
