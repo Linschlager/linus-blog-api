@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Linschlager/linus-blog-api.git",
-  "author": "Vettiger, Linus <linus.vettiger@novartis.com>",
+  "author": "Vettiger, Linus <linus4123@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "apollo-server-micro": "^2.6.1",
