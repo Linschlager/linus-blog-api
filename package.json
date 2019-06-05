@@ -8,5 +8,8 @@
   "dependencies": {
     "apollo-server-micro": "^2.6.1",
     "graphql": "^14.3.1"
+  },
+  "scripts": {
+    "dev": "micro api/index.js"
   }
 }
