@@ -11,7 +11,7 @@ const typeDefs = gql`
   }
   type Query {
     posts: [Post]
-    post(slug: String): Post
+    post(slug: String!): Post
   }
 `;
 
