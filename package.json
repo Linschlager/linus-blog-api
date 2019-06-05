@@ -1,0 +1,12 @@
+{
+  "name": "linus-blog-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Linschlager/linus-blog-api.git",
+  "author": "Vettiger, Linus <linus.vettiger@novartis.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-micro": "^2.6.1",
+    "graphql": "^14.3.1"
+  }
+}
