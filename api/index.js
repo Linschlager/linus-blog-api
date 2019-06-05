@@ -34,7 +34,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  playground: true
+  playground: false
 });
 
 module.exports = server.createHandler();
