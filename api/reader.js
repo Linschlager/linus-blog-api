@@ -16,7 +16,7 @@ const readPost = (slug) => {
       slug,
       content,
     };
-  } catch {}
+  } catch(ex) { console.log(ex) }
 };
 
 /**
