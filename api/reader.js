@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { join } = require('path');
-const folder = join(__dirname, 'posts');
+const folder = join(__dirname, '..', 'posts');
 
 /**
  *
