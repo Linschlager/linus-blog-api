@@ -1,5 +1,5 @@
-const { ApolloServer, gql } = require('apollo-server-micro');
-const cors = require('micro-cors')();
+const { ApolloServer, gql } = require('apollo-server-express');
+const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const { readPost, listPosts } = require('./reader');
@@ -22,17 +22,12 @@ const resolvers = {
   }
 };
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  introspection: true,
-  playground: false
+const server = new ApolloServer({ typeDefs, resolvers });
+const app = express();
+server.applyMiddleware({ app, cors: true, path: '/' });
+
+app.listen(4000, () => {
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
 });
 
-module.exports = cors((req, res) => {
-  if (req.method === "OPTIONS") {
-    res.send();
-    return;
-  }
-  return server.createHandler()
-});
+module.exports = app;
