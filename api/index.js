@@ -1,6 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server-micro');
 const cors = require('micro-cors')();
 const fs = require('fs');
+const path = require('path');
 const { readPost, listPosts } = require('./reader');
 
 const types = fs.readFileSync(path.join(__dirname, '..', 'graphql', 'schema.graphql'));
