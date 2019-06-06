@@ -2,7 +2,7 @@ const { ApolloServer, gql } = require('apollo-server-express');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { readPost, listPosts } = require('./reader');
+const { filterPosts, readPost, listPosts } = require('./reader');
 
 const types = fs.readFileSync(path.join(__dirname, '..', 'graphql', 'schema.graphql'));
 const typeDefs = gql`${types}`;
@@ -15,6 +15,13 @@ const resolvers = {
     post: (root, args, context) => {
       if (args.hasOwnProperty("slug")) {
         return readPost(args.slug);
+      } else {
+        return {};
+      }
+    },
+    tag: (root, args, context) => {
+      if (args.hasOwnProperty('tag')) {
+        return filterPosts(post => post.tags.includes(args.tag));
       } else {
         return {};
       }

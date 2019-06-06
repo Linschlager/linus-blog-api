@@ -32,7 +32,13 @@ const listPosts = () => {
     .map(readPost); // Get all post contents
 };
 
+const filterPosts = (comparator) => {
+  const posts = listPosts();
+  return posts.filter(comparator)
+};
+
 module.exports = {
   readPost,
   listPosts,
+  filterPosts,
 };
