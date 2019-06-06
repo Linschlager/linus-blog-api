@@ -5,7 +5,7 @@ const path = require('path');
 const { readPost, listPosts } = require('./reader');
 
 const types = fs.readFileSync(path.join(__dirname, '..', 'graphql', 'schema.graphql'));
-const typeDefs = gql(types);
+const typeDefs = gql`${types}`;
 
 const resolvers = {
   Query: {
