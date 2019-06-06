@@ -1,19 +1,10 @@
 const { ApolloServer, gql } = require('apollo-server-micro');
+const cors = require('micro-cors')();
+const fs = require('fs');
 const { readPost, listPosts } = require('./reader');
 
-const typeDefs = gql`
-  type Post {
-    slug: String
-    date: String
-    author: String
-    title: String
-    content: String
-  }
-  type Query {
-    posts: [Post]
-    post(slug: String!): Post
-  }
-`;
+const types = fs.readFileSync(path.join(__dirname, '..', 'graphql', 'schema.graphql'));
+const typeDefs = gql(types);
 
 const resolvers = {
   Query: {
@@ -34,11 +25,13 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  playground: false,
-  cors: {
-    origin: '*',
-    credentials: true
-  }
+  playground: false
 });
 
-module.exports = server.createHandler();
+module.exports = cors((req, res) => {
+  if (req.method === "OPTIONS") {
+    res.send();
+    return;
+  }
+  return server.createHandler()
+});

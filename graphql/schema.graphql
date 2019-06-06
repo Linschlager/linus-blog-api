@@ -1,0 +1,11 @@
+type Post {
+    slug: String
+    date: String
+    author: String
+    title: String
+    content: String
+}
+type Query {
+    posts: [Post]
+    post(slug: String!): Post
+}
