@@ -9,5 +9,5 @@ type Post {
 type Query {
     posts: [Post]
     post(slug: String!): Post
-    tag(tag: String!): Post
+    tag(tag: String!): [Post]
 }

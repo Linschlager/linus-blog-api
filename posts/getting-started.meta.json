@@ -1,6 +1,7 @@
 {
-  "title": "Getting started with Next.js and Now",
+  "title": "Creating your own blog",
   "author": "Linus Vettiger",
   "date": "06.06.2019",
-  "tags": ["React", "Next", "Now", "Zeit"]
+  "tags": [],
+  "published": false
 }

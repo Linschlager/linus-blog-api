@@ -9,7 +9,7 @@ const typeDefs = gql`${types}`;
 
 const resolvers = {
   Query: {
-    posts: (root, args, context) => {
+    posts: () => {
       return listPosts();
     },
     post: (root, args, context) => {
@@ -21,7 +21,7 @@ const resolvers = {
     },
     tag: (root, args, context) => {
       if (args.hasOwnProperty('tag')) {
-        return filterPosts(post => post.tags.includes(args.tag));
+        return filterPosts(post => post.tags.includes(args.tag.toLowerCase()));
       } else {
         return {};
       }
