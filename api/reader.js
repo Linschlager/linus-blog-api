@@ -29,13 +29,13 @@ const listPosts = () => {
   return files
     .filter(file => file.endsWith('.md')) // filter for only markdown files
     .map(f => f.substring(0, f.length - 3)) // Remove .md extension
-    .map(readPost); // Get all post contents
+    .map(readPost) // Get all post contents
+    .filter(post => post.published === true); //  // Only return published posts
 };
 
 const filterPosts = (comparator) => {
   const posts = listPosts();
   return posts
-    .filter(post => post.published === true) // Only return published posts
     .filter(comparator);
 };
 
