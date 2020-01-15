@@ -6,10 +6,11 @@
   "author": "Vettiger, Linus <linus4123@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "apollo-server-micro": "^2.6.1",
+    "apollo-server-express": "^2.6.1",
+    "express": "^4.17.1",
     "graphql": "^14.3.1"
   },
   "scripts": {
-    "dev": "micro api/index.js"
+    "dev": "node api/index.js"
   }
 }

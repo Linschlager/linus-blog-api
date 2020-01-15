@@ -1,7 +1,19 @@
-# Setting up your own blog with Next.js and Now
-
-## The easy way there
-There are a lot of platforms that make the whole thing extremely easy like [Wordpress](https://wordpress.com) or 
-[Blogger](https://www.blogger.com) but this isn't the point of this site. I wanted to try out a new technology I read
- about and what better way to do that than to hack together something you actually wanted to have anyway?
- 
+# Getting your own blog up and running
+## Why
+I guess I should get started by saying that I learned a fair bit by reading what other people wrote on their personal
+web pages.
+- Reflecting on your own stuff
+- Helping other people that have the same problems
+- Scaffolding ideas
+## How
+There's a lot of Plug&Play solutions out there, where you can start typing right away. But for me, something always
+feels off about them. Something I can't do how I want to, or simply that things are so much more complex than they have
+to be. So naturally I wanted to create something from scratch.
+### Setup
+- React
+- NextJS
+- GraphQL
+- Zeit.co / Now
+- Markdown
+- Github
+### 
