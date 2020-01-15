@@ -34,7 +34,9 @@ const listPosts = () => {
 
 const filterPosts = (comparator) => {
   const posts = listPosts();
-  return posts.filter(comparator)
+  return posts
+    .filter(post => post.published === true) // Only return published posts
+    .filter(comparator);
 };
 
 module.exports = {
